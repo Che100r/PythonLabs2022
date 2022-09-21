@@ -1,7 +1,7 @@
 def Task1():
     print("Task 1")
 
-    src = "HE FDFLLO342555*^F$%"
+    src = input()
 
     if src.isupper():
         print("YES")
@@ -47,11 +47,22 @@ def Task4():
 
 def Task5():
     print("Task 5")
+    list = []
+    pos = 0
+    neg = 0
 
-    str = input()
+    while 1:
+        b = input()
+        if b == '0':
+            break
 
-    a = int(str)
+        list.append(int(b))
 
-    print(a)
+    for m in list:
+        if m > 0:
+            pos = pos + 1
+        else:
+            neg = neg + 1
 
-Task5()
+    print(pos)
+    print(neg)
