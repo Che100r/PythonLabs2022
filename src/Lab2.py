@@ -41,3 +41,25 @@ def Task3():
     file = open("src/Files/output.txt", "w")
     file.write(f"{s}")
     file.close()
+
+
+def Task4():
+    print("Task 4")
+
+    file = open("src/Files/inputt.txt")
+    str1 = file.read()
+    file.close()
+    str1 = str1.translate({ord(i): None for i in '.,!? '}).lower()
+    str2 = set(str1)
+    dictionary = {}
+
+    for c in str2:
+        dictionary[c] = str1.count(c)
+
+    sort = dict(sorted(dictionary.items(), key=lambda item: item[1], reverse=True))
+
+    file = open("src/Files/output.txt", "w")
+    for k, i in sort.items():
+        file.write(f"{k}: {i}\n")
+
+    file.close()
