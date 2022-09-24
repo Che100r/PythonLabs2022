@@ -12,8 +12,8 @@ def Task1():
 def Task2():
     print("Task 2")
 
-    name = "First"
-    surname = "Second"
+    name = input()
+    surname = input()
 
     print(name[0] + "." + surname[0] + ".")
 
@@ -35,8 +35,9 @@ def Task4():
     print("Task 4")
 
     num = input()
+    i = int(num)
     if num.isnumeric():
-        if int(num) % 4 == 0:
+        if (i % 4 == 0) and (i % 100 != 0) or (i % 400 == 0):
             print("True")
         else:
             print("False")
