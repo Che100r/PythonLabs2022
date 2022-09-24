@@ -1,3 +1,3 @@
-from src.Lab2 import Lab2
+from src.Lab3 import lab_3_1
 
-Lab2.Task4()
+lab_3_1
