@@ -1,3 +1,3 @@
-from src.Lab5 import lab5
+from src.Lab6 import lab6_2
 
-lab5
+lab6_2
