@@ -1,6 +1,6 @@
+import threading
 import time
 import urllib.request
-from threading import Thread
 
 
 def sync():
@@ -28,10 +28,16 @@ sync()
 
 tStart = time.time()
 
+threads = []
+
 for u in urls:
-    th = Thread(target=asyncc, args=u)
+    thread = threading.Thread(target=asyncc, args=(u,))
     print(u)
-    th.start()
+    threads.append(thread)
+    thread.start()
+
+for thread in threads:
+    thread.join()
 
 tStop = time.time()
 print("Time sync: " + str(tStop - tStart) + " seconds")

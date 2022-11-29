@@ -1,7 +1,7 @@
 import os
 import re
+import threading
 import time
-from threading import Thread
 
 
 def search():
@@ -23,8 +23,9 @@ result = search()
 time_end = time.time()
 print("Time: " + str(time_end - time_start))
 
-th = Thread(target=search)
+th = threading.Thread(target=search)
 time_start = time.time()
-result2 = th.start()
+th.start()
+th.join()
 time_end = time.time()
 print("Time: " + str(time_end - time_start))
